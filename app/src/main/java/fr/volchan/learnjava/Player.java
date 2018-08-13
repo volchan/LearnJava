@@ -18,6 +18,7 @@ public class Player {
     }
 
     public void setHandleName(String handle) {
+        if (handle.length() < 4) return;
         handleName = handle;
     }
 }

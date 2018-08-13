@@ -6,5 +6,7 @@ public class Demo {
         System.out.println(player.getHandleName());
         player.setHandleName("Volchan");
         System.out.println(player.getHandleName());
+        player.setHandleName("Vol");
+        System.out.println(player.getHandleName());
     }
 }
