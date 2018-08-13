@@ -1,10 +1,13 @@
 package fr.volchan.learnjava;
 
+import android.support.annotation.NonNull;
+
 public class Player {
     private String handleName;
     private int lives;
     private int level;
     private int score;
+    private Weapon weapon;
 
     public Player() {
         this("Unknown player");
@@ -15,10 +18,19 @@ public class Player {
     }
 
     public Player(String handle, int startingLevel) {
+        this(handle, startingLevel, new Weapon("Sword", 10, 20));
+    }
+
+    public Player(String handle, Weapon weapon) {
+        this(handle, 1, weapon);
+    }
+
+    public Player(String handle, int startingLevel, Weapon weapon) {
         setHandleName(handle);
         setLevel(3);
         setLevel(startingLevel);
         setScore(0);
+        setWeapon(weapon);
     }
 
     public String getHandleName() {
@@ -60,5 +72,13 @@ public class Player {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 }
