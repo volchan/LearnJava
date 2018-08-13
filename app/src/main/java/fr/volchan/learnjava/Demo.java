@@ -4,16 +4,17 @@ public class Demo {
     public static void main(String[] args) {
         Player p1 = new Player();
         System.out.println("Player One name: " + p1.getHandleName());
-        p1.setHandleName("Volchan");
+        p1.setNameAndLevel("Volchan", 5);
         System.out.println("Player One name: " + p1.getHandleName());
-        p1.setHandleName("Vol");
+        System.out.println("Player One level: " + p1.getLevel());
+        p1.setNameAndLevel("Vol", 15);
         System.out.println("Player One name: " + p1.getHandleName());
         System.out.println("Player One level: " + p1.getLevel());
         System.out.println("Player One lives: " + p1.getLives());
 
         Player p2 = new Player("Toto");
         System.out.println("Player Two name: " + p2.getHandleName());
-        p2.setLives(5);
+        p2.setLevel(5);
         System.out.println("Player Two level: " + p2.getLevel());
         System.out.println("Player Two lives: " + p2.getLives());
 
