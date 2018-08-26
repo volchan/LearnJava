@@ -13,6 +13,10 @@ public class Demo {
         System.out.println("Player One lives: " + p1.getLives());
         System.out.println("Player One weapon: " + p1.getWeapon().getName());
 
+        Weapon myAxe = new Weapon("Goldshine Axe", 15, 50);
+        p1.setWeapon(myAxe);
+        System.out.println("Player One weapon: " + p1.getWeapon().getName());
+
         Player p2 = new Player("Toto", new Weapon("Wood stick", 1, 200));
         System.out.println("Player Two name: " + p2.getHandleName());
         p2.setLevel(5);

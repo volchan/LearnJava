@@ -1,6 +1,6 @@
 package fr.volchan.learnjava;
 
-import android.support.annotation.NonNull;
+import java.util.ArrayList;
 
 public class Player {
     private String handleName;
@@ -8,6 +8,7 @@ public class Player {
     private int level;
     private int score;
     private Weapon weapon;
+    private ArrayList<Loot> inventory;
 
     public Player() {
         this("Unknown player");
@@ -27,10 +28,11 @@ public class Player {
 
     public Player(String handle, int startingLevel, Weapon weapon) {
         setHandleName(handle);
-        setLevel(3);
+        setLives(3);
         setLevel(startingLevel);
         setScore(0);
         setWeapon(weapon);
+        this.inventory = new ArrayList<>();
     }
 
     public String getHandleName() {
@@ -80,5 +82,25 @@ public class Player {
 
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
+    }
+
+    public ArrayList<Loot> getInventory() {
+        return inventory;
+    }
+
+//    public void setInventory(ArrayList<Loot> inventory) {
+//        this.inventory = inventory;
+//    }
+
+    public void pickUpLoot(Loot newLoot) {
+        inventory.add(newLoot);
+    }
+
+    public boolean dropLoot(Loot loot) {
+        if (this.inventory.contains(loot)) {
+            inventory.remove(loot);
+            return true;
+        }
+        return false;
     }
 }
