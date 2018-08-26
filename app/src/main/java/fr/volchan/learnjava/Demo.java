@@ -17,17 +17,35 @@ public class Demo {
         p1.setWeapon(myAxe);
         System.out.println("Player One weapon: " + p1.getWeapon().getName());
 
-        Player p2 = new Player("Toto", new Weapon("Wood stick", 1, 200));
-        System.out.println("Player Two name: " + p2.getHandleName());
-        p2.setLevel(5);
-        System.out.println("Player Two level: " + p2.getLevel());
-        System.out.println("Player Two lives: " + p2.getLives());
-        System.out.println("Player Two weapon: " + p2.getWeapon().getName());
+        Loot redPotion = new Loot("Red Potion", LootType.POTION, 7);
+        p1.pickUpLoot(redPotion);
 
-        Player p3 = new Player("Tata", 9, new Weapon("Wooden fork", 2, 500));
-        System.out.println("Player Three name: " + p3.getHandleName());
-        System.out.println("Player Three level: " + p3.getLevel());
-        System.out.println("Player Three lives: " + p3.getLives());
-        System.out.println("Player Three weapon: " + p3.getWeapon().getName());
+        p1.pickUpLoot(new Loot("Chest Armor +3", LootType.ARMOR, 80));
+        p1.pickUpLoot(new Loot("Ring of Protection +2", LootType.RING, 40));
+        p1.pickUpLoot(new Loot("Invisibility Potion", LootType.POTION, 35));
+
+        p1.showInventory();
+
+        Loot bluePotion = new Loot("Blue Potion", LootType.POTION, 6);
+        boolean wasDeleted = p1.dropLoot(bluePotion);
+        System.out.println(wasDeleted);
+        p1.showInventory();
+
+        boolean redPotionDeleted = p1.dropLoot(redPotion);
+        System.out.println(redPotionDeleted);
+        p1.showInventory();
+
+//        Player p2 = new Player("Toto", new Weapon("Wood stick", 1, 200));
+//        System.out.println("Player Two name: " + p2.getHandleName());
+//        p2.setLevel(5);
+//        System.out.println("Player Two level: " + p2.getLevel());
+//        System.out.println("Player Two lives: " + p2.getLives());
+//        System.out.println("Player Two weapon: " + p2.getWeapon().getName());
+//
+//        Player p3 = new Player("Tata", 9, new Weapon("Wooden fork", 2, 500));
+//        System.out.println("Player Three name: " + p3.getHandleName());
+//        System.out.println("Player Three level: " + p3.getLevel());
+//        System.out.println("Player Three lives: " + p3.getLives());
+//        System.out.println("Player Three weapon: " + p3.getWeapon().getName());
     }
 }

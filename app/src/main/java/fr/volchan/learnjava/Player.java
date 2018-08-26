@@ -103,4 +103,12 @@ public class Player {
         }
         return false;
     }
+
+    public void showInventory() {
+        System.out.println("===== " + this.getHandleName() + "'s inventory =====");
+        for(Loot item : this.inventory) {
+            System.out.println(item.getName());
+        }
+        System.out.println("===============================");
+    }
 }
