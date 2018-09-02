@@ -47,11 +47,14 @@ public class Demo {
 //        System.out.println("Player Three level: " + p3.getLevel());
 //        System.out.println("Player Three lives: " + p3.getLives());
 //        System.out.println("Player Three weapon: " + p3.getWeapon().getName());
-        Enemy enemy = new Enemy("Dummy", 10, 3);
-        enemy.showInfo();
-        enemy.takeDamage(3);
-        enemy.showInfo();
-        enemy.takeDamage(7);
-        enemy.showInfo();
+//        Enemy enemy = new Enemy("Dummy", 10, 3);
+//        enemy.showInfo();
+//        enemy.takeDamage(3);
+//        enemy.showInfo();
+//        enemy.takeDamage(7);
+//        enemy.showInfo();
+        Troll troll = new Troll("Troll");
+        troll.showInfo();
+        troll.takeDamage(30);
     }
 }
