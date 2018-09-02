@@ -56,5 +56,10 @@ public class Demo {
         Troll troll = new Troll("Troll");
         troll.showInfo();
         troll.takeDamage(30);
+
+        Vampire vlad = new Vampire("Vald");
+        vlad.showInfo();
+        vlad.takeDamage(8);
+        vlad.showInfo();
     }
 }
