@@ -61,5 +61,10 @@ public class Demo {
         vlad.showInfo();
         vlad.takeDamage(8);
         vlad.showInfo();
+
+        VampireKing dracula = new VampireKing("Dracula");
+        dracula.showInfo();
+        dracula.takeDamage(40);
+        dracula.showInfo();
     }
 }
