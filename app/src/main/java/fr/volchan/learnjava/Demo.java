@@ -66,5 +66,18 @@ public class Demo {
         dracula.showInfo();
         dracula.takeDamage(40);
         dracula.showInfo();
+
+        while (dracula.getLives() > 0) {
+            if (dracula.dodges()) {
+                continue;
+            }
+            if (dracula.runAway()) {
+                System.out.println(dracula.getName() + " ran away");
+                break;
+            } else {
+                dracula.takeDamage(12);
+                dracula.showInfo();
+            }
+        }
     }
 }
