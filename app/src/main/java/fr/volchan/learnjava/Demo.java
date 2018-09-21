@@ -55,49 +55,51 @@ public class Demo {
 //        enemy.showInfo();
 //        enemy.takeDamage(7);
 //        enemy.showInfo();
-        Troll troll = new Troll("Troll");
-        troll.showInfo();
-        troll.takeDamage(30);
-
-        Vampire vlad = new Vampire("Vald");
-        vlad.showInfo();
-        vlad.takeDamage(8);
-        vlad.showInfo();
-
-        Random rand = new Random();
-
-        VampireKing dracula = new VampireKing("Dracula");
-        dracula.showInfo();
-        dracula.takeDamage(40);
-        dracula.showInfo();
-
-        do {
-            if (dracula.dodges()) {
-                continue;
-            }
-            if (dracula.runAway()) {
-                System.out.println(dracula.getName() + " ran away");
-                break;
-            } else {
-                dracula.takeDamage(80);
-                dracula.showInfo();
-            }
-        } while (dracula.getLives() > 0);
-        System.out.println("========================================");
-
-//        Player conan = new Player("Conan");
-//        conan.pickUpLoot(new Loot("Invisibility", LootType.POTION, 4));
-//        conan.pickUpLoot(new Loot("Mithril", LootType.ARMOR, 183));
-//        conan.pickUpLoot(new Loot("Ring of speed", LootType.RING, 25));
-//        conan.pickUpLoot(new Loot("Red Potion", LootType.POTION, 2));
-////        conan.pickUpLoot(new Loot("Cursed Shield", LootType.ARMOR, -8));
-//        conan.pickUpLoot(new Loot("Brass Ring", LootType.RING, 1));
-//        conan.pickUpLoot(new Loot("Chain Mail", LootType.ARMOR, 4));
-//        conan.pickUpLoot(new Loot("Gold Ring", LootType.RING, 12));
-//        conan.pickUpLoot(new Loot("Health Potion", LootType.POTION, 3));
-//        conan.pickUpLoot(new Loot("Silver Ring", LootType.RING, 6));
-//        conan.showInventory();
+//        Troll troll = new Troll("Troll");
+//        troll.showInfo();
+//        troll.takeDamage(30);
 //
-//        System.out.println(conan.score());
+//        Vampire vlad = new Vampire("Vald");
+//        vlad.showInfo();
+//        vlad.takeDamage(8);
+//        vlad.showInfo();
+//
+//        Random rand = new Random();
+//
+//        VampireKing dracula = new VampireKing("Dracula");
+//        dracula.showInfo();
+//        dracula.takeDamage(40);
+//        dracula.showInfo();
+//
+//        do {
+//            if (dracula.dodges()) {
+//                continue;
+//            }
+//            if (dracula.runAway()) {
+//                System.out.println(dracula.getName() + " ran away");
+//                break;
+//            } else {
+//                dracula.takeDamage(80);
+//                dracula.showInfo();
+//            }
+//        } while (dracula.getLives() > 0);
+//        System.out.println("========================================");
+
+        Player conan = new Player("Conan");
+        conan.pickUpLoot(new Loot("Invisibility", LootType.POTION, 4));
+        conan.pickUpLoot(new Loot("Mithril", LootType.ARMOR, 183));
+        conan.pickUpLoot(new Loot("Ring of speed", LootType.RING, 25));
+        conan.pickUpLoot(new Loot("Red Potion", LootType.POTION, 2));
+        conan.pickUpLoot(new Loot("Cursed Shield", LootType.ARMOR, -8));
+        conan.pickUpLoot(new Loot("Brass Ring", LootType.RING, 1));
+        conan.pickUpLoot(new Loot("Chain Mail", LootType.ARMOR, 4));
+        conan.pickUpLoot(new Loot("Gold Ring", LootType.RING, 12));
+        conan.pickUpLoot(new Loot("Health Potion", LootType.POTION, 3));
+        conan.pickUpLoot(new Loot("Silver Ring", LootType.RING, 6));
+        conan.showInventory();
+
+        System.out.println(conan.score());
+        conan.dropLoot("Cursed Shield");
+        System.out.println(conan.score());
     }
 }
