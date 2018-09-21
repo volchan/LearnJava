@@ -66,26 +66,24 @@ public class Demo {
 
         Random rand = new Random();
 
-        for (int i=0; i<rand.nextInt(10)+1 ; i++) {
-            VampireKing dracula = new VampireKing("Dracula");
-            dracula.showInfo();
-            dracula.takeDamage(40);
-            dracula.showInfo();
+        VampireKing dracula = new VampireKing("Dracula");
+        dracula.showInfo();
+        dracula.takeDamage(40);
+        dracula.showInfo();
 
-            while (dracula.getLives() > 0) {
-                if (dracula.dodges()) {
-                    continue;
-                }
-                if (dracula.runAway()) {
-                    System.out.println(dracula.getName() + " ran away");
-                    break;
-                } else {
-                    dracula.takeDamage(80);
-                    dracula.showInfo();
-                }
+        do {
+            if (dracula.dodges()) {
+                continue;
             }
-            System.out.println("========================================");
-        }
+            if (dracula.runAway()) {
+                System.out.println(dracula.getName() + " ran away");
+                break;
+            } else {
+                dracula.takeDamage(80);
+                dracula.showInfo();
+            }
+        } while (dracula.getLives() > 0);
+        System.out.println("========================================");
 
 //        Player conan = new Player("Conan");
 //        conan.pickUpLoot(new Loot("Invisibility", LootType.POTION, 4));
